@@ -7,9 +7,11 @@ RSpec.feature "As a user" do
 
       visit root_path
       fill_in "q", with: zip_code
-      
+
       click_on "Locate"
-      expect(path).to contain(zip_code)
+
+      expect(page).to have_current_path(/\/search?/)
+      expect(page).to have_current_path(/80203/)
     end
 
     xit "should return list of closest stations" do
