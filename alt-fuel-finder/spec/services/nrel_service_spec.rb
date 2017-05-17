@@ -11,7 +11,7 @@ RSpec.describe NrelService do
       expect(stations.first[:city]).to eq("Denver")
     end
 
-    xit "#nearest_stations_by_zip returns station objects" do
+    it "#nearest_stations_by_zip returns station objects" do
       zip_code = 80203
       nrel = NrelService.new
       stations = nrel.nearest_stations_by_zip(zip_code)
