@@ -22,13 +22,23 @@ RSpec.feature "As a user" do
       click_on "Locate"
 
       expect(page).to have_css(".station_list")
-      expect(page).to have_selector(".station_show", count: 20)
+      expect(page).to have_selector(".station_show", count: 10)
     end
 
-    xit "results should be limited to electric and propane" do
+    it "results should be limited to electric and propane" do
     end
 
-    xit "each station should have name, address, fuel types, distance, and access times" do
+    it "each station should have name, address, fuel types, distance, and access times" do
+      zip_code = 80203
+
+      visit root_path
+      fill_in "q", with: zip_code
+      click_on "Locate"
+
+      expect(page).to have_css(".station_list")
+      within(".station_show") do
+        expect(content).to be("name")
+      end
     end
   end
 end
