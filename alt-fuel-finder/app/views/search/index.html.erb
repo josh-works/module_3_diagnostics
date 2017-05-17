@@ -1,7 +1,9 @@
 <div class="station_list">
 
   <% @stations.each do |station| %>
-    <%= content_tag :h3, station[:id] %>
-    <%= content_tag :li, station[:station_phone] %>
+    <div class="station_show">
+      <%= content_tag :h3, station[:id] %>
+      <%= content_tag :li, station[:station_phone] %>
+    </div>
   <% end %>
 </div>

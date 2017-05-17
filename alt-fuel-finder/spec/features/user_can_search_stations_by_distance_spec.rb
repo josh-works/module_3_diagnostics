@@ -22,6 +22,7 @@ RSpec.feature "As a user" do
       click_on "Locate"
 
       expect(page).to have_css(".station_list")
+      expect(page).to have_selector(".station_show", count: 20)
     end
 
     xit "results should be limited to electric and propane" do
