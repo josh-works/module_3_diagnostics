@@ -7,10 +7,4 @@ class SearchController < ApplicationController
     pretty = JSON.parse(raw.body, symbolize_names: true)
     @stations = pretty[:fuel_stations][0..9]
   end
-
-
-  private
-
-
-
 end
