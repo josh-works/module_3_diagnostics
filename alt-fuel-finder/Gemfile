@@ -13,6 +13,7 @@ gem 'figaro'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 group :development, :test do
+  gem 'capybara'
   gem 'pry'
   gem 'awesome_print'
   gem "factory_girl_rails", "~> 4.0"
