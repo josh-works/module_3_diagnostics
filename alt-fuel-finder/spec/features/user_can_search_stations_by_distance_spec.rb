@@ -14,16 +14,14 @@ RSpec.feature "As a user" do
       expect(page).to have_current_path(/80203/)
     end
 
-    xit "should return list of closest stations" do
+    it "should return list of closest stations" do
       zip_code = 80203
 
       visit root_path
-      fill_in "search by zip...", with: zip_code
+      fill_in "q", with: zip_code
       click_on "Locate"
 
-      expect(path).to match("/search")
       expect(page).to have_css(".station_list")
-      expect(Station.count).to eq(10)
     end
 
     xit "results should be limited to electric and propane" do
