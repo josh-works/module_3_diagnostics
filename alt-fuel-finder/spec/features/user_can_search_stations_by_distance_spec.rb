@@ -36,8 +36,10 @@ RSpec.feature "As a user" do
       click_on "Locate"
 
       expect(page).to have_css(".station_list")
-      within(".station_show") do
-        expect(content).to be("name")
+      first(".station_show") do
+        expect(text).to have_content("Station ID")
+        expect(text).to have_content("Street address")
+        expect(text).to have_content("Fuel types")
       end
     end
   end
