@@ -2,13 +2,13 @@
 
   <% @stations.each do |station| %>
     <div class="station_show">
-      <%= content_tag :h3, "Station ID: #{station[:id]}" %>
-      <%= content_tag :li, "Phone: #{station[:station_phone]}" %>
-      <%= content_tag :li, "Street address: #{station[:street_address]}" %>
-      <%= content_tag :li, "Directions: #{station[:intersection_directions]}" %>
-      <%= content_tag :li, "Fuel types: #{station[:fuel_type_code]}" %>
-      <%= content_tag :li, "Access times: #{station[:access_days_time]}" %>
-      <li>Distance from 80203 zip code: <%= station[:distance] %> miles. </li>
+      <%= content_tag :h3, "Station ID: #{station.id}" %>
+      <%= content_tag :li, "Phone: #{station.station_phone}" %>
+      <%= content_tag :li, "Street address: #{station.street_address}" %>
+      <%= content_tag :li, "Directions: #{station.intersection_directions}" %>
+      <%= content_tag :li, "Fuel types: #{station.fuel_type_code}" %>
+      <%= content_tag :li, "Access times: #{station.access_days_time}" %>
+      <li>Distance from 80203 zip code: <%= station.distance %> miles. </li>
     </div>
   <% end %>
 </div>
